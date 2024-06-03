@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package marketdata;
+
+message MarketData {
+  map<string, InstrumentData> feeds = 1;
+}
+
+message InstrumentData {
+  LatestTradedPriceClose ltpc = 1;
+}
+
+message LatestTradedPriceClose {
+  float ltp = 1;
+  string ltt = 2;
+  string ltq = 3;
+  float cp = 4;
+}
